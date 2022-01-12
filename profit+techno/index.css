@@ -1,0 +1,29 @@
+.profitLegend {
+    list-style-type: none;
+}
+
+.smallLogo {
+    width: 200px;
+    height: 60px;
+}
+
+.logoText {
+    font: 50px "Century Gothic", Futura, sans-serif;
+    margin-top: 5px;
+    color: rgba(13,110,253,255);
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+}
+
+.logoContainer{
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: space-evenly;
+}
+
