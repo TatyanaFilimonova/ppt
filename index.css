@@ -50,9 +50,14 @@
         display: flex;
     }
 
+    .nav-link.menuItem {
+        display: block;
+    }
+
+
     .nav-link {
-    display: none;
-}
+        display: none;
+    }
 
 }
 
