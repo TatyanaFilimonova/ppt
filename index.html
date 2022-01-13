@@ -12,9 +12,10 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top col-12 col-xl-8" style="margin: 0 auto;  background-color: #e3f2fd;">
-        <img class="smallLogo" src="img/logo.png">
-        <button class="navbar-toggler"
+<nav class="navbar navbar-expand-lg navbar-light fixed-top col-12 col-xl-8 navbar__flex" >
+        <img class="brandName" src="img/logo.png">
+
+        <button class="navbar-toggler toggler__right"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -24,21 +25,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse fade" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-xl-0" role="tablist" style="margin-left: 10px">
+            <ul class="navbar-nav me-auto mb-2 mb-xl-0 navbarMenu" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="document.getElementById('about-us-tab').click()" >О компании</a>
+                    <a class="nav-link menuItem" href="#" onClick="clickMenuItem('about-us-tab')">О компании</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="document.getElementById('what-we-do-tab').click()">Услуги</a>
+                    <a class="nav-link menuItem" href="#" onClick="clickMenuItem('what-we-do-tab')">Услуги</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="document.getElementById('what-we-use-tab').click()">Оборудование</a>
+                    <a class="nav-link menuItem" href="#" onClick="clickMenuItem('what-we-use-tab')">Оборудование</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="document.getElementById('budget-tab').click()">Стоимость</a>
+                    <a class="nav-link menuItem" href="#" onClick="clickMenuItem('budget-tab')">Стоимость</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="document.getElementById('contact-tab').click()">Контакты</a>
+                    <a class="nav-link menuItem" href="#" onClick="clickMenuItem('contact-tab')">Контакты</a>
                 </li>
 
             </ul>
@@ -468,7 +469,13 @@
             </div>
     </div>
     </main>
+<script>
+    function clickMenuItem(toggle_area){
+        document.getElementById(toggle_area).click();
+        document.querySelector(".toggler__right").click();
+    }
 
+</script>
 
 <!-- Optional JavaScript; choose one of the two! -->
 
