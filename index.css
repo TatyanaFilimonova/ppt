@@ -1,3 +1,5 @@
+@import "/forms.css";
+
 .profitLegend {
     list-style-type: none;
 }
@@ -14,6 +16,7 @@
     margin-left: 1em;
 }
 
+.primary-
 
 .logoText {
     font: 50px "Century Gothic", Futura, sans-serif;
@@ -43,6 +46,17 @@
        margin-left: 5em;
     }
 }
+
+@media (min-width: 992px){
+    collapse.navbar-collapse {
+        display: none;
+    }
+    .navbarMenu {
+        display: none;
+    }
+}
+
+
 
 @media (max-width: 991px){
 
