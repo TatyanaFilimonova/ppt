@@ -13,9 +13,31 @@ function getCheckBoxData(formData, formItemName){
     return 0;
 }
 
+function validFormData(form, formData) {
+    const keys = formData.keys();
+    console.log(keys);
+    for (const key of keys) {
+        if (form[key].type === "number"){
+            if (parseInt(form[key].value) > parseInt(form[key].max) || parseInt(form[key].value) < parseInt(form[key].min)) {
+                form[key].focus();
+                return false;
+            }
+        }
+
+    }
+
+    return true;
+}
+
 function clickCalculateButton(formPrefix) {
+
     const form = document.forms[formPrefix+'Form'];
     const formData = new FormData(form);
+    if (!validFormData(form, formData)) {
+        window.alert("Ошибка при вводе данных. Внесите корректную информацию в поля, выделенные красным");
+        return 1;
+    }
+
     const floorNumber = parseData(formData, formPrefix+'FloorNumber');
     const square = parseData(formData, formPrefix+'Square');
     const bathroomNumber = parseData(formData, formPrefix+'BathroomNumber');
@@ -61,22 +83,36 @@ function clickCalculateButton(formPrefix) {
     }
 
     const costs = getMaterialCost(componentSet);
+    const wires_cost  = componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
+        componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand;
 
     const projectCost = {
-        materialCost: costs[0],
+        materialCost: costs[0] - wires_cost,
+        wires_cost: wires_cost,
         projectDevCost: 400*taskListProject,
         electricDevCost: (componentSet.wires.quantity+componentSet.twistedPair.quantity)*1*taskListWiring,
         installCost: costs[1],
-        serviceCost: (costs[0]!==0)? 50 : 0,
+        serviceCost: (costs[0]!==0)? 15 : 0,
     }
 
-    console.log(componentSet);
-    console.log(costs);
-    console.log(projectCost);
-
+    const wireString = (taskListWiring!==0)? "Кабельная продукция: <div><strong>" + wires_cost + "</strong></div>" : "";
+    const projectString = (taskListProject!==0)? "Разработка проекта: <div><strong>" + projectCost.projectDevCost +  "</strong></div>" : "";
+    const electricDevString = (taskListWiring!==0)? "Электромонтажные работы: <div><strong>" + projectCost.electricDevCost + "</strong></div>" : "";
+    const totalElectro = (taskListWiring!==0)? "<strong>Итого электромонтаж:</strong> <div><strong>" + (projectCost.wires_cost + projectCost.electricDevCost)  + "</strong></div>" : "";
+    const installString = (taskListInstall!==0)? "Установка и настройка системы: <div><strong>" + projectCost.installCost + "</strong></div>" : "";
+    const serviceString = (taskListService!==0)? "Абонентское обслуживание, за месяц:  <div><strong>" + projectCost.serviceCost + "</strong></div>" : "";
     let elementToWrite = document.getElementById('HouseAmount');
-    elementToWrite.innerHTML = projectCost.materialCost + projectCost.projectDevCost + projectCost.electricDevCost + projectCost.installCost;
-    document.getElementById('HouseConclusion').style.display='grid';
+    elementToWrite.innerHTML = ""+
+        projectString +
+        "Стоимость компонентов: <div><strong>"+ projectCost.materialCost + "</strong></div>" +
+        installString +
+        serviceString +
+        "<strong>Итого проект автоматизации :</strong><div><strong>"+ (projectCost.materialCost + projectCost.projectDevCost+projectCost.installCost ) + "</strong></div>"+
+        "<div>&nbsp; </div>"+ "<div>&nbsp;</div>"+
+        wireString+
+        electricDevString+
+        totalElectro;
+    document.getElementById('HouseAmount').style.display='grid';
 }
 
 function getMaterialCost(componentSet){
