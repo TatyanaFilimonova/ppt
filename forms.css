@@ -9,9 +9,9 @@
     border-radius: 5px;
     border: 1px solid lightgray;
     display: grid;
-    grid-template-columns: 3em 1fr;
-    gap: 0.75em;
-    padding: 1em;
+    grid-template-columns: 4em 1fr;
+    gap: 0.5em;
+    padding: 0.5em;
 }
 
 .form__group_name {
