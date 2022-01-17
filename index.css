@@ -4,9 +4,11 @@
     list-style-type: none;
 }
 
-.smallLogo {
-    width: 50px;
-    height: 50px;
+.KNX__logo {
+    width: 100px;
+    height: 80px;
+    display: block;
+    margin: auto;
 }
 
 .brandName {
@@ -16,7 +18,10 @@
     margin-left: 1em;
 }
 
-.primary-
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
 
 .logoText {
     font: 50px "Century Gothic", Futura, sans-serif;
@@ -34,28 +39,11 @@
 }
 
 @media (min-width: 992px) {
-    .navbar__flex {
-        height: 60px;
-        display: grid;
-    }
-}
-
-@media (min-width: 992px) {
     .brandName {
         align-self: start;
         margin-left: 5em;
     }
 }
-
-@media (min-width: 992px){
-    collapse.navbar-collapse {
-        display: none;
-    }
-    .navbarMenu {
-        display: none;
-    }
-}
-
 
 
 @media (max-width: 991px){
@@ -104,5 +92,22 @@
 }
 
 .toggler__right {
-    margin-right: 10px;
+    margin-right: 15px;
 }
+
+.about__container__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1em;
+
+}
+
+.about__knx {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1em;
+    font-size: 10px;
+    align-content: center;
+    align-items: center;
+}
+

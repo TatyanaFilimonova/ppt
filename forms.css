@@ -43,6 +43,19 @@
     grid-template-columns: 5fr 1fr;
     column-gap: 1em;
     align-content: center;
+
+    }
+
+.form__disclaimer {
+    width: 100%;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #e3f2fd;
+    display: none;
+    grid-template-columns: 1fr;
+    column-gap: 1em;
+    align-content: center;
+    color: brown;
     }
 
 @media (max-width: 440px) {
@@ -51,6 +64,9 @@
     }
     .form__input {
         font-size: 14px;
+    }
+    .form__disclaimer {
+        font-size: 12px;
     }
 
     .form__group{
