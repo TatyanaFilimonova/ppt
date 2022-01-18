@@ -97,16 +97,14 @@ function clickCalculateButton(formPrefix) {
         twistedPair: {quantity: Math.ceil(square*5*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.6, priceMax: 1, demand: taskListWiring, installCost: 0}
     }
 
-    console.log(componentSet);
-    const costs = getMaterialCost(componentSet);
     const wires_cost  = componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
         componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand;
 
     const projectCost = {
         materialCost: costs[0] - wires_cost,
-        wires_cost: wires_cost,
+        wires_cost: Math.ceil(wires_cost),
         projectDevCost: 400*taskListProject,
-        electricDevCost: (componentSet.wires.quantity+componentSet.twistedPair.quantity)*1*taskListWiring,
+        electricDevCost: Math.ceil((componentSet.wires.quantity+componentSet.twistedPair.quantity)*1*taskListWiring),
         installCost: costs[1],
         serviceCost: (costs[0]!==0)? 15 : 0,
     }
