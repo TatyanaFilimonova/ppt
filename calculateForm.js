@@ -72,6 +72,7 @@ function clickCalculateButton(formPrefix) {
     const compMultimedia = getCheckBoxData(formData, formPrefix+'ComponentsMultimedia');
     const compVideo = getCheckBoxData(formData, formPrefix+'ComponentsVideo');
     const compGuard = getCheckBoxData(formData, formPrefix+'ComponentsGuard');
+    const compResource = getCheckBoxData(formData, formPrefix+'ComponentsGuard');
 
     const  componentSet =  {
         leaksSensor: {quantity: bathroomNumber+2, priceMin: 10, priceMax: 15, demand: compPipes, installCost: 5},
@@ -84,17 +85,19 @@ function clickCalculateButton(formPrefix) {
         climaBridge:   {quantity: (roomNumber+1), priceMin: 300, priceMax: 1000, demand: compClimat, installCost: 10},
         servoDrive:  {quantity: bathroomNumber+Math.ceil(groundSquare/200)*compIrrigation, priceMin: 50, priceMax: 150, demand: compPipes, installCost: 10},
         gateControl: {quantity: parking+3, priceMin: 100, priceMax: 200, demand: compGates, installCost: 15},
-        mainControl: {quantity: 1, priceMin: 500, priceMax: 1000, demand: 0, installCost: 100},
+        mainControl: {quantity: 1, priceMin: 500, priceMax: 1000, demand: 1, installCost: 100},
         irrigator:   {quantity: Math.ceil((groundSquare-square)/200), priceMin: 100, priceMax: 300, demand: compIrrigation, installCost: 15},
         ipPanel:     {quantity: parking+1+floorNumber-1, priceMin: 150, priceMax: 300, demand: compIPtelecom, installCost: 15},
         ipCam:       {quantity: parking+6, priceMin: 100, priceMax: 300, demand: compVideo, installCost: 15},
         heatControl: {quantity: Math.ceil((bathroomNumber+roomNumber+1+spacesNumber+parking)/6), priceMin: 400, priceMax: 600, demand: compClimat, installCost: 20},
         ipStorage:   {quantity: 1, priceMin: 150, priceMax: 500, demand: compVideo, installCost: 15},
         curtain:     {quantity: Math.ceil((roomNumber+1)*2/6), priceMin: 150, priceMax: 50, demand: compCurtains, installCost: 10},
+        resourceCounter: {quantity: 1, priceMin: 330, priceMax: 500, demand: compResource, installCost: 20},
         wires:       {quantity: Math.ceil(square*12*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.8, priceMax: 1.2, demand: taskListWiring, installCost: 0},
         twistedPair: {quantity: Math.ceil(square*5*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.6, priceMax: 1, demand: taskListWiring, installCost: 0}
     }
 
+    console.log(componentSet);
     const costs = getMaterialCost(componentSet);
     const wires_cost  = componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
         componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand;

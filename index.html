@@ -11,8 +11,9 @@
     <title>Profit + techno</title>
 </head>
 <body>
+<div class="container blue">
 
-<nav class="navbar navbar-hide navbar-light fixed-top col-12 col-xl-7 navbar__flex" >
+<nav class="navbar navbar-hide navbar-light fixed-top col-12 col-xl-8 navbar__flex" >
     <img class="brandName" src="img/logo.png">
     <button class="navbar-toggler toggler__right"
             type="button"
@@ -41,20 +42,20 @@
                 <a class="nav-link menuItem" href="#" onClick="clickMenuItem('contact-tab')">Контакты</a>
             </li>
             <li class="nav-item">
-            <div><a href="./ua-index.html">UA</a>/<a href="./index.html" class="disabled">RU</a></div>
+                <a href="./ua-index.html" class="nav-link menuItem disabled">UA</a>
             </li>
         </ul>
 
     </div>
 </nav>
-<div style="height: 85px;">
+<div style="height: 70px;">
 
 </div>
 
 <main role="main" class="container">
 
     <div class="row justify-content-center">
-        <div class="col-12 col-xl-8">
+        <div class="col-12 col-xl-8 height_100" >
 
             <ul class="nav nav-tabs nav-tabs__mobile" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -108,7 +109,7 @@
                             aria-selected="false"><b>Контакты</b></button>
                 </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content white  padding__1" id="myTabContent">
                 <div class="tab-pane fade show active" id="about-us" role="tabpanel">
                     <br>
                     <p>
@@ -117,11 +118,12 @@
                         (до 2022 года мы оказывали услуги как ЧП "Сарапин").
                     </p>
                     <p>
-                        Чаще всего то, что мы создаем называют <strong>"умный дом"</strong>.
+                        Чаще всего то, что мы создаем, называют <strong>"умный дом"</strong>.
                     </p>
                     <p>
-                        <strong>Умный дом</strong>, это система, которая позволяет вам поднять уровень комфорта при эксплуатации недвижимости до максимума.
-                        Кроме того, <strong>умный дом</strong> позволит сэкономить средства на длинном промежутке времени,
+                        <strong>Умный дом</strong>, это система автоматизации, которая позволяет поднять уровень
+                        комфорта при эксплуатации недвижимости до максимума.
+                        Кроме того, <strong>умный дом</strong> экономит средства на длинном промежутке времени,
                         управляя потреблением ресурсов, снижая основные риски.
                     </p>
                     <p>
@@ -168,11 +170,11 @@
 
 
                 </div>
-                <div class="tab-pane fade" id="what-we-do" role="tabpanel" aria-labelledby="what-we-do-tab">
-                    <div class="accordion" id="accordionWhatWeDo">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button"
+                <div class="tab-pane fade " id="what-we-do" role="tabpanel" aria-labelledby="what-we-do-tab">
+                    <div class="accordion " id="accordionWhatWeDo">
+                        <div class="accordion-item ">
+                            <h2 class="accordion-header " id="headingOne">
+                                <button class="accordion-button padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne"
@@ -182,10 +184,10 @@
                                 </button>
                             </h2>
                             <div id="collapseOne"
-                                 class="accordion-collapse collapse"
+                                 class="accordion-collapse collapse padding_small"
                                  aria-labelledby="headingOne"
                                  data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации домов входят:</strong>
                                     <br>
                                     - проектирование,
@@ -280,7 +282,7 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo"
@@ -293,7 +295,7 @@
                                  class="accordion-collapse collapse"
                                  aria-labelledby="headingTwo"
                                  data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации квартир входят:</strong>
                                     <br>
                                     - проектирование,
@@ -338,7 +340,7 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree"
@@ -348,7 +350,7 @@
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации поъездов и ОСББ входят:</strong>
                                     <br>
                                     - проектирование,
@@ -393,7 +395,7 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseFour"
@@ -403,7 +405,7 @@
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации офисов, магазинов, ресторанов входит:</strong>
                                     <br>
                                     - проектирование,
@@ -444,97 +446,122 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="spacer"></div>
                     </div>
                 </div>
-                <div class="tab-pane fade about__container__grid" id="what-we-use" role="tabpanel" aria-labelledby="what-we-use-tab">
+                <div class="tab-pane fade padding__1 about__container__grid" id="what-we-use" role="tabpanel" aria-labelledby="what-we-use-tab">
                     <br>
-                    <h4>Мы автоматизируем дома опираясь на технологию</h4>
+                    <h4>Автоматизация дома базируется на технологии</h4>
 
                     <div class="about__knx">
                         <img src="./img/KNX_logo.png" class="KNX__logo" alt="KNX logo"/>
 
-                        KNX — коммуникационная шина, широко используемая для автоматизации зданий.
-
-                        Технология KNX создана в 1999 году «Ассоциацией KNX», в которую входят Siemens, Gira, ABB, Berker, Jung и 10 менее крупных игроков.
+                        Технология KNX создана в 1999 году «Ассоциацией KNX», в которую входили Siemens, Gira, ABB, Berker, Jung и 10 менее крупных игроков.
                         В конце 2003 года технология была утверждена как европейский стандарт EN 50090, а в 2006 году — как международный стандарт ISO/IEC 14543.
                         <br>
-                        <strong>Протокол KNX это одноранговая сеть с событийным управлением.</strong>
-                        Сеть KNX поддерживает стандартный протокол передачи данных, который реализуется в различных передающих средах:
-                        <ul>
-                            <li>
-                                витая пара (KNX TP) — специальный кабель с фиксированной скоростью передачи 9600 бит/с
-                            </li>
-                            <li>
-                                силовая линия (KNX PL)— скорость передачи 1200 бит/с, поверх 230 В, 50 Гц
-                            </li>
-                            <li>
-                                IP-сеть (KNX IP) — например, Ethernet
-                            </li>
-                            <li>
-                                радиоканал (KNX RF)— для обмена используется частотная полоса 868,0 - 870,0 МГц
-                            </li>
-                        </ul>
-                        В состав сети KNX входят следующие типы устройств:
-                        <ul>
-                            <li>
-                                Сенсоры (датчики), которые отвечают за взаимодействие с пользователем и внешними событиями
-                                <ul>
-                                    <li>
-                                        Cенсорные настенные панели, выключатели
-                                    </li>
-                                    <li>
-                                        Датчики температуры, влажности, СО2
-                                    </li>
-                                    <li>
-                                        Датчики движения, освещенности
-                                    </li>
-                                    <li>
-                                        Таймеры
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Исполнительные устройства (актуаторы), они управляют различным оборудованием (световые приборы, климатическая техника) в соответствии с командами, поступающими от сенсоров.
-                                <ul>
-                                    <li>
-                                        Cветовые регуляторы (диммеры)
-                                    </li>
-                                    <li>
-                                        Реле
-                                    </li>
-                                    <li>
-                                        Модули управления жалюзи и другое
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Системные устройства, которые обеспечивают возможность настройки и взаимодействия устройств в сети KNX
-                                <ul>
-                                    <li>
-                                        Блоки питания
-                                    </li>
-                                    <li>
-                                        Интерфейсные модули
-                                    </li>
-                                    <li>
-                                        Логические модули
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                        В соответствии со стандартом KNX в настоящее время выпускают свою
+                        продукцию уже более 350 производителей устройств управления освещением, отоплением, вентиляцией
+                        и кондиционированием, аудио/видео и бытовой техникой.
+                        <br>
+                        Каждое устройство, работающее в стандарте KNX, сертифицируется организацией KONNEX,
+                        что гарантирует совместимость устройства. Системы KNX после продолжительного периода эксплуатации
+                        могут быть в любой момент расширены, и устройства разных поколений будут свободно взаимодействовать.
+                        <br>
+                        Система KNX может управлять системами освещения, затемнения окон (вертикальными и горизонтальными
+                        жалюзи, рольставнями), системами отопления, вентиляции и кондиционирования, мультирумами и
+                        домофонными системами. Вместе с тем KNX является открытой системой, она может также интегрироваться с
+                        коммуникационными протоколами, например BACnet, LON , Modbus, M-bus.
+                        <br>
+                        Наибольшим достоинством системы является энергетическая эффективность, которую можно достичь
+                        путем интеграции всех имеющихся в доме инженерных систем так, чтобы
+                        они взаимодействовали и взаимно дополнялись. В результате интеграции систем отопления, вентиляции
+                        и кондиционирования, рекуперации, освещения и затемнения окон, экономия может достигать 40 % от
+                        расходов на содержание неавтоматизированного здания.
+                        <br>
+                        Следующий немаловажный аспект - это отличная эргономика и эстетичность системы.
+                        Выключатели KNX многофункциональны. В одном блоке они обеспечивают управление освещением, жалюзи,
+                        температурой. Эргономичные панели заменяет ряды выключателей в 5-местных рамках. Пользователи не будут задумываться, какая кнопка служит для включения конкретного
+                        светильника или жалюзи.
+                        Кроме этого, технология развязывает руки архитектору при проектировании: достаточно лишь определиться
+                        с местом расположения панели, а набор функций, которыми она будет управлять, можно дополнить в процессе,
+                        ведь фантазия пользователя набирает обороты в процессе строительства или даже эксплуатации.
+                        <br>
+
+                        <h4>Компонентная база автоматизации:</h4>
+                        <div class="about__trademarks">
+                            <img src="./img/Schneider_Electric.svg" alt="Schneider electric logo" class="trademark__logo"/>
+                            <ul>
+                                <li>
+                                    Димеры
+                                </li>
+                                <li>
+                                    Реле, исполнительные устройства для жалюзи, отопления
+                                </li>
+                                <li>
+                                    Шлюзы: Dali, IP, кондиционеров, учета ресурсов
+                                </li>
+                                <li>
+                                    Выключатели, датчики
+                                </li>
+                                <li>
+                                    Интерфейсы дистанционного управления
+                                </li>
+                            </ul>
+                            <img src="./img/Hikvision_logo.svg" alt="Hikvision logo" class="trademark__logo"/>
+                            <ul>
+                                <li>
+                                    Видеокамеры
+                                </li>
+                                <li>
+                                    Регистраторы
+                                </li>
+                                <li>
+                                    Домофоны
+                                </li>
+                                <li>
+                                    Системы управления доступом
+                                </li>
+                            </ul>
+                            <img src="./img/ABB_logo.svg" alt="Hikvision logo" class="trademark__logo"/>
+                            <ul>
+                                <li>
+                                    Блоки питания, реле
+                                </li>
+                                <li>
+                                    Соединения и проводной монтаж
+                                </li>
+                                <li>
+                                    Сигнализация
+                                </li>
+
+                            </ul>
+                            <img src="./img/Gira.svg" alt="Gira logo" class="trademark__logo"/>
+                            <ul>
+                                <li>
+                                   Сенсорные и клавишные выключатели
+                                </li>
+                                <li>
+                                    Центры управления
+                                </li>
+                                <li>
+                                    Датчики
+                                </li>
+
+                            </ul>
+                        </div>
 
 
 
                 </div>
-                <div class="tab-pane fade" id="budget" role="tabpanel" aria-labelledby="budget-tab">
+                </div>
+                <div class="tab-pane fade " id="budget" role="tabpanel" aria-labelledby="budget-tab">
                     <div class="accordion" id="accordionBudget">
 
                         <!--Budget accordion item 1   Smart house budget                                                               -->
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetOne">
-                                <button class="accordion-button"
+                                <button class="accordion-button padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetOne"
@@ -544,11 +571,11 @@
                                 </button>
                             </h2>
                             <div id="collapseBudgetOne"
-                                 class="accordion-collapse collapse"
+                                 class="accordion-collapse padding_small collapse"
                                  aria-labelledby="headingBudgetOne"
                                  data-bs-parent="#accordionBudget">
                                 <form name="HouseForm" id ='HouseForm'>
-                                    <div class="accordion-body">
+                                    <div class="accordion-body padding_small">
                                         <div id="collapseFormHouse"
                                              aria-labelledby="headingFormHouse"
                                              class="form__container"
@@ -634,6 +661,7 @@
                                                 <input type="checkbox" name = "HouseComponentsMultimedia" checked = "true"> Управление мультимедиа системой </input>
                                                 <input type="checkbox" name = "HouseComponentsVideo" checked = "true"> Видеонаблюдение </input>
                                                 <input type="checkbox" name = "HouseComponentsGuard" checked = "true"> Защита от проникновения, пожара, затопления </input>
+                                                <input type="checkbox" name = "HouseComponentsResource" checked = "true"> Учет ресурсов </input>
                                             </div>
                                             <button type="button"
                                                     class="btn btn-primary form__button"
@@ -658,7 +686,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetTwo">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetTwo"
@@ -668,10 +696,10 @@
                                 </button>
                             </h2>
                             <div id="collapseBudgetTwo"
-                                 class="accordion-collapse collapse"
+                                 class="accordion-collapse padding_small collapse"
                                  aria-labelledby="headingBudgetTwo"
                                  data-bs-parent="#accordionBudget">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>Оценка бюджета автоматизации квартиры:</strong>
 
                                 </div>
@@ -682,7 +710,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetThree">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetThree"
@@ -692,10 +720,10 @@
                                 </button>
                             </h2>
                             <div id="collapseBudgetThree"
-                                 class="accordion-collapse collapse"
+                                 class="accordion-collapse padding_small collapse"
                                  aria-labelledby="headingBudgetThree"
                                  data-bs-parent="#accordionBudget">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>Оценка стоимости автоматизации подъезда/ОСББ:</strong>
 
                                 </div>
@@ -707,7 +735,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetFour">
-                                <button class="accordion-button collapsed"
+                                <button class="accordion-button padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetFour"
@@ -717,39 +745,19 @@
                                 </button>
                             </h2>
                             <div id="collapseBudgetFour"
-                                 class="accordion-collapse collapse"
+                                 class="accordion-collapse padding_small collapse"
                                  aria-labelledby="headingBudgetFour"
                                  data-bs-parent="#accordionBudget">
-                                <div class="accordion-body">
+                                <div class="accordion-body padding_small">
                                     <strong>Оценка стоимости автоматизации офиса:</strong>
-                                    <br>
-                                    - проектирование,
-                                    <br>
-                                    - монтажные работы по слаботочным и электросетям,
-                                    <br>
-                                    - поставка компонентов системы,
-                                    <br>
-                                    - инсталляция оборудования,
-                                    <br>
-                                    - настройка и абонентское обслуживание комплекса
-                                    <br>
-                                    <strong>Вам остается выбрать направления автоматизации, определить бюджет:</strong>
-                                    <ul>
-                                        <li>Управление освещением</li>
-                                        <li>Управление электроприборами</li>
-                                        <li>Управление климатом, вентиляцией</li>
-                                        <li>Контроль доступа в помещения</li>
-                                        <li>Видеонаблюдение</li>
-                                        <li>Защита от проникновения, пожара, затопления</li>
-                                    </ul>
-                                    <p>
 
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="spacer"></div>
                 </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <br>
                     <p>
                         <strong>Адрес:</strong> ул. Дмитриевская 75, подъезд 1, офис 01.
@@ -760,6 +768,7 @@
                     <p>
                         <strong>Email:</strong> info.ppt.ua@gmail.com
                     </p>
+                    <div class="spacer"></div>
                 </div>
             </div>
         </div>
@@ -783,5 +792,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 -->
+</div>
 </body>
 </html>

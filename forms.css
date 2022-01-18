@@ -73,6 +73,11 @@
         font-size: 14px;
     }
 
+    .padding_small {
+        padding-left:  0.5em;
+        padding-right:  0.5em;
+    }
+
 }
 
 
