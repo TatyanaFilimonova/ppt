@@ -1,5 +1,5 @@
 const disclaimer = "<p>"+
-    "<strong>Внимание</strong>: расчет носит иллюстративный характер: он опирается на <strong>базовый</strong> набор элементов. В "+
+    "<strong>Внимание</strong>: расчет носит иллюстративный характер, он опирается на <strong>базовый</strong> набор элементов. В "+
     "конкретном проекте набор формируется исходя из потребностей и бюджета.</p>"+
     "<strong>Важно:</strong> не менее 20% от бюджета проекта - это сумма, которую владелец " +
     "аналогичного, но не автоматизированого дома потратит на:"+
@@ -97,12 +97,13 @@ function clickCalculateButton(formPrefix) {
         twistedPair: {quantity: Math.ceil(square*5*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.6, priceMax: 1, demand: taskListWiring, installCost: 0}
     }
 
-    const wires_cost  = componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
-        componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand;
+    const costs = getMaterialCost(componentSet);
+    const wires_cost  = Math.ceil(componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
+        componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand);
 
     const projectCost = {
-        materialCost: costs[0] - wires_cost,
-        wires_cost: Math.ceil(wires_cost),
+        materialCost: Math.ceil(costs[0] - wires_cost),
+        wires_cost: wires_cost,
         projectDevCost: 400*taskListProject,
         electricDevCost: Math.ceil((componentSet.wires.quantity+componentSet.twistedPair.quantity)*1*taskListWiring),
         installCost: costs[1],

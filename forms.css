@@ -36,8 +36,8 @@
 
 .form__conclusion {
     width: 100%;
-    margin: 1em auto;
-    padding: 1em;
+    margin: 0.5em auto;
+    padding: 0.5em;
     background-color: #e3f2fd;
     display: none;
     grid-template-columns: 5fr 1fr;
@@ -48,8 +48,8 @@
 
 .form__disclaimer {
     width: 100%;
-    margin: 1em auto;
-    padding: 1em;
+    margin: 0.5em auto;
+    padding: 0.5em;
     background-color: #e3f2fd;
     display: none;
     grid-template-columns: 1fr;
