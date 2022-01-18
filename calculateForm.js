@@ -85,7 +85,7 @@ function clickCalculateButton(formPrefix) {
         climaBridge:   {quantity: (roomNumber+1), priceMin: 300, priceMax: 1000, demand: compClimat, installCost: 10},
         servoDrive:  {quantity: bathroomNumber+Math.ceil(groundSquare/200)*compIrrigation, priceMin: 50, priceMax: 150, demand: compPipes, installCost: 10},
         gateControl: {quantity: parking+3, priceMin: 100, priceMax: 200, demand: compGates, installCost: 15},
-        mainControl: {quantity: 1, priceMin: 500, priceMax: 1000, demand: 1, installCost: 100},
+        mainControl: {quantity: 1, priceMin: 500, priceMax: 1000, demand: 0, installCost: 100},
         irrigator:   {quantity: Math.ceil((groundSquare-square)/200), priceMin: 100, priceMax: 300, demand: compIrrigation, installCost: 15},
         ipPanel:     {quantity: parking+1+floorNumber-1, priceMin: 150, priceMax: 300, demand: compIPtelecom, installCost: 15},
         ipCam:       {quantity: parking+6, priceMin: 100, priceMax: 300, demand: compVideo, installCost: 15},
