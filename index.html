@@ -27,22 +27,22 @@
     <div class="collapse navbar-collapse fade" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-xl-0 navbarMenu" role="tablist">
             <li class="nav-item" >
-                <a class="nav-link menuItem" href="#" onClick="clickMenuItem('about-us-tab')">О компании</a>
+                <a class="nav-link menuItem noborder" href="#" onClick="clickMenuItem('about-us-tab')">О компании</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link menuItem" href="#" onClick="clickMenuItem('what-we-do-tab')">Услуги</a>
+                <a class="nav-link menuItem noborder" href="#" onClick="clickMenuItem('what-we-do-tab')">Услуги</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link menuItem" href="#" onClick="clickMenuItem('what-we-use-tab')">Оборудование</a>
+                <a class="nav-link menuItem noborder" href="#" onClick="clickMenuItem('what-we-use-tab')">Оборудование</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link menuItem" href="#" onClick="clickMenuItem('budget-tab')">Стоимость</a>
+                <a class="nav-link menuItem noborder" href="#" onClick="clickMenuItem('budget-tab')">Стоимость</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link menuItem" href="#" onClick="clickMenuItem('contact-tab')">Контакты</a>
+                <a class="nav-link menuItem noborder" href="#" onClick="clickMenuItem('contact-tab')">Контакты</a>
             </li>
             <li class="nav-item">
-                <a href="./ua-index.html" class="nav-link menuItem disabled">UA</a>
+                <a href="./ua-index.html" class="nav-link menuItem noborder disabled">UA</a>
             </li>
         </ul>
 
@@ -172,8 +172,8 @@
                 </div>
                 <div class="tab-pane fade " id="what-we-do" role="tabpanel" aria-labelledby="what-we-do-tab">
                     <br>
-                    <div class="accordion " id="accordionWhatWeDo">
-                        <div class="accordion-item ">
+                    <div class="accordion" id="accordionWhatWeDo">
+                        <div class="accordion-item">
                             <h2 class="accordion-header " id="headingOne">
                                 <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
@@ -185,9 +185,9 @@
                                 </button>
                             </h2>
                             <div id="collapseOne"
-                                 class="accordion-collapse collapse padding_small"
+                                 class="accordion-collapse collapse"
                                  aria-labelledby="headingOne"
-                                 data-bs-parent="#accordionExample">
+                                 data-bs-parent="#accordionWhatWeDo">
                                 <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации домов входят:</strong>
                                     <br>
@@ -295,7 +295,7 @@
                             <div id="collapseTwo"
                                  class="accordion-collapse collapse"
                                  aria-labelledby="headingTwo"
-                                 data-bs-parent="#accordionExample">
+                                 data-bs-parent="#accordionWhatWeDo">
                                 <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации квартир входят:</strong>
                                     <br>
@@ -333,7 +333,7 @@
                                     </p>
                                     <div class="collapse" id="collapseSmartFlat">
                                         <div class="card card-body">
-                                            Здесь будут фотографии с комментариями из нашего портфолио умных кваритир
+                                            Здесь будут фотографии с комментариями из нашего портфолио умных квартир
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +350,10 @@
                                     Автоматизация подъездов <br>ОСББ
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div id="collapseThree"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="headingThree"
+                                 data-bs-parent="#accordionWhatWeDo">
                                 <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации подъездов и ОСББ входят:</strong>
                                     <br>
@@ -405,7 +408,10 @@
                                     Автоматизация офисов, <br>магазинов, ресторанов
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div id="collapseFour"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="headingFour"
+                                 data-bs-parent="#accordionWhatWeDo">
                                 <div class="accordion-body padding_small">
                                     <strong>В наши услуги по автоматизации офисов, магазинов, ресторанов входит:</strong>
                                     <br>
