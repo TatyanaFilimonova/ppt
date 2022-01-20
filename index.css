@@ -150,13 +150,14 @@ a.disabled {
     border-top: 2px solid white;
 }
 
-.nav-link.menuItem {
-    border: none;
+.nav-link.menuItem.noborder {
+    border: none !important;
 }
 
-.nav-link.menuItem:hover {
-    border: none;
+.nav-link.menuItem.noborder:hover {
+    border: none !important;
 }
+
 
 .nav-link.menuItem.active {
     border: none;
