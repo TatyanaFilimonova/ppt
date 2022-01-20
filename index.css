@@ -154,6 +154,13 @@ a.disabled {
     border: none;
 }
 
+.nav-link.menuItem:hover {
+    border: none;
+}
+
+.nav-link.menuItem.active {
+    border: none;
+}
 
 .nav-link {
     color: 	rgb(36, 59, 107);
