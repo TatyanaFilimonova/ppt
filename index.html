@@ -11,22 +11,22 @@
     <title>Profit + techno</title>
 </head>
 <body>
-<div class="container blue">
+<div class="container container__color">
 
 <nav class="navbar navbar-hide navbar-light fixed-top col-12 col-xl-8 navbar__flex" >
     <img class="brandName" src="img/logo.png">
-    <button class="navbar-toggler toggler__right"
+    <button class="navbar-toggler navbar-dark toggler__right"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon border_color_logo "></span>
     </button>
     <div class="collapse navbar-collapse fade" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-xl-0 navbarMenu" role="tablist">
-            <li class="nav-item">
+            <li class="nav-item" >
                 <a class="nav-link menuItem" href="#" onClick="clickMenuItem('about-us-tab')">О компании</a>
             </li>
             <li class="nav-item">
@@ -143,27 +143,27 @@
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Офисы
-                                <span class="badge bg-primary rounded-pill">25</span>
+                                <span class="badge badge__color__custom rounded-pill" >25</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Жилые дома
-                                <span class="badge bg-primary rounded-pill">30</span>
+                                <span class="badge badge__color__custom rounded-pill">30</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Квартиры
-                                <span class="badge bg-primary rounded-pill">50</span>
+                                <span class="badge badge__color__custom rounded-pill">50</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Подъезды многоквартирных домов
-                                <span class="badge bg-primary rounded-pill">2</span>
+                                <span class="badge badge__color__custom rounded-pill">2</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 ОСББ
-                                <span class="badge bg-primary rounded-pill">1</span>
+                                <span class="badge badge__color__custom rounded-pill">1</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Рестораны
-                                <span class="badge bg-primary rounded-pill">5</span>
+                                <span class="badge badge__color__custom rounded-pill">5</span>
                             </li>
                         </ul>
                     </div>
@@ -175,13 +175,13 @@
                     <div class="accordion " id="accordionWhatWeDo">
                         <div class="accordion-item ">
                             <h2 class="accordion-header " id="headingOne">
-                                <button class="accordion-button padding_small"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne"
                                         aria-expanded="false"
                                         aria-controls="collapseOne">
-                                    Автоматизация домов (умный дом)
+                                    Автоматизация домов <br>(умный дом)
                                 </button>
                             </h2>
                             <div id="collapseOne"
@@ -283,13 +283,13 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed padding_small"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo"
                                         aria-expanded="false"
                                         aria-controls="collapseTwo">
-                                    Автоматизация квартир (умная квартира)
+                                    Автоматизация квартир <br>(умная квартира)
                                 </button>
                             </h2>
                             <div id="collapseTwo"
@@ -341,18 +341,18 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button padding_small collapsed"
+                                <button class="accordion-button  custom_color padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree"
                                         aria-expanded="false"
                                         aria-controls="collapseThree">
-                                    Автоматизация подъездов и ОСББ
+                                    Автоматизация подъездов <br>ОСББ
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                 <div class="accordion-body padding_small">
-                                    <strong>В наши услуги по автоматизации поъездов и ОСББ входят:</strong>
+                                    <strong>В наши услуги по автоматизации подъездов и ОСББ входят:</strong>
                                     <br>
                                     - проектирование,
                                     <br>
@@ -396,13 +396,13 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button padding_small collapsed"
+                                <button class="accordion-button  custom_color padding_small collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseFour"
                                         aria-expanded="false"
                                         aria-controls="collapseFour">
-                                    Автоматизация офисов, магазинов, ресторанов
+                                    Автоматизация офисов, <br>магазинов, ресторанов
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -456,37 +456,48 @@
 
                     <div class="about__knx">
                         <img src="./img/KNX_logo.png" class="KNX__logo" alt="KNX logo"/>
-
+                        <p>
                         Технология KNX создана в 1999 году «Ассоциацией KNX», в которую входили Siemens, Gira, ABB, Berker, Jung и 10 менее крупных игроков.
-                        В конце 2003 года технология была утверждена как европейский стандарт EN 50090, а в 2006 году — как международный стандарт ISO/IEC 14543.
-                        <br>
+                        В 2006 году технология была утверждена как международный стандарт ISO/IEC 14543.
+                        </p>
+                        <p>
                         В соответствии со стандартом KNX в настоящее время выпускают свою
-                        продукцию уже более 350 производителей устройств управления освещением, отоплением, вентиляцией
+                        продукцию более 350 производителей устройств управления освещением, отоплением, вентиляцией
                         и кондиционированием, аудио/видео и бытовой техникой.
-                        <br>
+                        </p>
+                        <p>
                         Каждое устройство, работающее в стандарте KNX, сертифицируется организацией KONNEX,
                         что гарантирует совместимость устройства. Системы KNX после продолжительного периода эксплуатации
                         могут быть в любой момент расширены, и устройства разных поколений будут свободно взаимодействовать.
-                        <br>
-                        Система KNX может управлять системами освещения, затемнения окон (вертикальными и горизонтальными
-                        жалюзи, рольставнями), системами отопления, вентиляции и кондиционирования, мультирумами и
-                        домофонными системами. Вместе с тем KNX является открытой системой, она может также интегрироваться с
-                        коммуникационными протоколами, например BACnet, LON , Modbus, M-bus.
-                        <br>
-                        Наибольшим достоинством системы является энергетическая эффективность, которую можно достичь
-                        путем интеграции всех имеющихся в доме инженерных систем так, чтобы
-                        они взаимодействовали и взаимно дополнялись. В результате интеграции систем отопления, вентиляции
+                        </p>
+                        <p>
+                        KNX позволяет управлять системами освещения, затемнения окон, системами отопления, вентиляции и
+                        кондиционирования, мультирумами и домофонными системами. Вместе с тем KNX является открытой системой,
+                        она может также интегрироваться с коммуникационными протоколами, например BACnet, LON, Modbus, M-bus.
+                        </p>
+                        <p>
+                        Наибольшим достоинством системы является энергетическая эффективность.
+                        В результате интеграции систем отопления, вентиляции
                         и кондиционирования, рекуперации, освещения и затемнения окон, экономия может достигать 40 % от
                         расходов на содержание неавтоматизированного здания.
-                        <br>
-                        Следующий немаловажный аспект - это отличная эргономика и эстетичность системы.
+                        </p>
+                        <p>
+                        Следующий немаловажный аспект - это эргономика и эстетичность системы.
                         Выключатели KNX многофункциональны. В одном блоке они обеспечивают управление освещением, жалюзи,
-                        температурой. Эргономичные панели заменяет ряды выключателей в 5-местных рамках. Пользователи не будут задумываться, какая кнопка служит для включения конкретного
-                        светильника или жалюзи.
+                        температурой. Они заменят ряды выключателей в 5-местных рамках. Пользователи не будут задумываться,
+                        какая кнопка служит для включения конкретного светильника или жалюзи.
+                        </p>
+                        <p>
                         Кроме этого, технология развязывает руки архитектору при проектировании: достаточно лишь определиться
                         с местом расположения панели, а набор функций, которыми она будет управлять, можно дополнить в процессе,
                         ведь фантазия пользователя набирает обороты в процессе строительства или даже эксплуатации.
-                        <br>
+                        <p>
+                        Очевидны преимущества шины KNX перед беспроводными системами автоматизации: шина обеспечивает
+                        бесперебойную передачу сигналов между участниками сети. В случае с беспроводной технологией система
+                        становится зависимой от наличия/отсутствия помех. Источником помех, из-за которых "отпадают"
+                        сегменты беспроводной сети, может быть что угодно: электрический теплый пол, неисправные электроприборы,
+                        "глушилки" на вооружении параноидальных соседей.
+                        </p>
 
                         <h4>Компонентная база автоматизации:</h4>
                         <div class="about__trademarks">
@@ -563,7 +574,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetOne">
-                                <button class="accordion-button padding_small"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetOne"
@@ -573,7 +584,7 @@
                                 </button>
                             </h2>
                             <div id="collapseBudgetOne"
-                                 class="accordion-collapse padding_small collapse"
+                                 class="accordion-collapse collapse"
                                  aria-labelledby="headingBudgetOne"
                                  data-bs-parent="#accordionBudget">
                                 <form name="HouseForm" id ='HouseForm'>
@@ -583,7 +594,7 @@
                                              class="form__container"
                                         >
                                             <p class = "form__group_name">Расскажите о своем доме:</p>
-                                            <div id ="houseAbout" class="form__group">
+                                            <div id ="houseAbout" class="form__group noscroll">
                                                 <input type = "number"
                                                        name = "HouseFloorNumber"
                                                        class = "form__input"
@@ -643,14 +654,14 @@
                                                 <input type="checkbox" name = "HouseParking"> Наличие гаража </input>
                                             </div>
                                             <p class = "form__group_name">Перечень работ, которые вы нам доверяете:</p>
-                                            <div id = "houseTaskList" class="form__group">
+                                            <div id = "houseTaskList" class="form__group__checkboxes">
                                                 <input type="checkbox" name = "HouseTaskListProject" checked = "true"> Разработка проектной документации </input>
                                                 <input type="checkbox" name = "HouseTaskListWiring" checked = "true"> Монтажные работы по слаботочным и электросетям </input>
                                                 <input type="checkbox" name = "HouseTaskListInstall" checked = "true"> Установка и настройка компонентов системы </input>
                                                 <input type="checkbox" name = "HouseTaskListService" checked = "true"> Абонентское обслуживание системы </input>
                                             </div>
                                             <p class = "form__group_name">Направления автоматизации:</p>
-                                            <div id = "houseComponents" class="form__group">
+                                            <div id = "houseComponents" class="form__group__checkboxes">
                                                 <input type="checkbox" name = "HouseComponentsIndoorLight" checked = "true"> Управление внутренним освещением и электроприборами </input>
                                                 <input type="checkbox" name = "HouseComponentsOutdoorLight" checked = "true"> Управление внешним освещением </input>
                                                 <input type="checkbox" name = "HouseComponentsGates" checked = "true"> Управление электро-замками, откатными и подъемными воротами </input>
@@ -688,7 +699,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetTwo">
-                                <button class="accordion-button padding_small collapsed"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetTwo"
@@ -712,7 +723,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetThree">
-                                <button class="accordion-button padding_small collapsed"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetThree"
@@ -737,7 +748,7 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingBudgetFour">
-                                <button class="accordion-button padding_small collapsed"
+                                <button class="accordion-button custom_color collapsed padding_small"
                                         type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetFour"

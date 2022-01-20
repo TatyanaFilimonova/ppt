@@ -1,44 +1,58 @@
 .form__container{
     display: grid;
     grid-template-columns: 1fr;
+    padding: 0em;
 }
 
 
 .form__group{
-    margin-bottom: 1em;
-    border-radius: 5px;
-    border: 1px solid lightgray;
+    margin-bottom: 0.5em;
     display: grid;
-    grid-template-columns: 4em 1fr;
-    gap: 0.5em;
-    padding: 0.5em;
+    grid-template-columns: 3em 1fr;
+    row-gap: 1em;
+    column-gap: 0.5em;
+    padding: 0em;
+}
+
+.form__group__checkboxes{
+    margin-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: 2em 1fr;
+    row-gap: 1em;
+    column-gap: 0.5em;
+    padding: 0em;
 }
 
 .form__group_name {
-    color: #0c63e4;
+    color: 	rgb(36, 59, 107);
+    font-weight: bold;
+
 }
 
 .form__input:valid {
     display: block;
     align-self: center;
+    vertical-align: center;
     height: 1.5em;
     border-radius: 5px;
-    border: 1px solid #0c63e4;
+    border: 1px solid rgb(136, 148, 172);
+    color: white;
+    background-color: rgb(	36, 59, 107);
+    text-align: center;
 }
 
 .form__input:invalid {
-    display: block;
-    align-self: center;
     height: 1.5em;
-    border-radius: 5px;
     border: 2px solid brown;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .form__conclusion {
     width: 100%;
     margin: 0.5em auto;
     padding: 0.5em;
-    background-color: #e3f2fd;
+    background-color: rgb(194, 202, 215);
     display: none;
     grid-template-columns: 5fr 1fr;
     column-gap: 1em;
@@ -50,7 +64,7 @@
     width: 100%;
     margin: 0.5em auto;
     padding: 0.5em;
-    background-color: #e3f2fd;
+    background-color: rgb(194, 202, 215);
     display: none;
     grid-template-columns: 1fr;
     column-gap: 1em;
@@ -63,13 +77,17 @@
         font-size: 14px;
     }
     .form__input {
-        font-size: 16px;
+        font-size: 14px;
     }
     .form__disclaimer {
         font-size: 14px;
     }
 
     .form__group{
+        font-size: 14px;
+    }
+
+    .form__group__checkboxes{
         font-size: 14px;
     }
 
@@ -104,19 +122,28 @@ input[type=checkbox]:before {
     text-align: center;
     border-radius: 5px;
     font-size: 15px;
-    color: white !important;
+    color: rgb(36, 59, 107) !important;
     display: block;
     align-content: center;
     width: 1.5em;
     height: 1.5em;
     margin-top: -1px;
     margin-left: -1px ;
-    border: 1px solid #0c63e4;
-    background-color: white;
+    border: 1px solid rgb(136, 148, 172);
+    background-color: 	rgb(36, 59, 107);
     margin-right: 7px;
 }
 
 input[type=checkbox]:checked:before {
 
-    color: black !important;
+    color: white !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }

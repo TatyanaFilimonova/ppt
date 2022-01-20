@@ -1,13 +1,14 @@
 @import "/forms.css";
 
-.blue {
-    background-color: rgba(169, 169, 169, 0.5);
+.container__color {
+    background-color: rgba(	194, 202, 215, 100%);
+
 
 }
 
 .white {
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0px 5px 5px 5px;
 
 }
 
@@ -15,12 +16,8 @@
     height: max(100vh, 100%);
 }
 
-.height_100_important {
-    height: 100vh;
-}
-
 .spacer {
-    height: 500px;
+    height: 400px;
 }
 
 .padding__1 {
@@ -52,19 +49,33 @@ a.disabled {
     cursor: default;
 }
 
+.badge__color__custom {
+    background-color: rgb(92, 108, 140);
+}
+
+.btn-primary {
+    background-color: rgb(36, 59, 107) !important;
+    border: 2px solid rgb(136, 148, 172) !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 2px 2px 2px rgb(0,0,0, 0.5);
+}
 
 .navbar__flex {
     margin: 0 auto;
-    background-color: #e3f2fd;
+    background-color: rgb(	136, 148, 172);
     display: flex;
     flex-direction: row;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    border-radius: 0px 0px 5px 5px;
 }
 
 @media (min-width: 992px) {
     .brandName {
         align-self: start;
         margin-left: 1em;
+        box-shadow: white;
     }
 }
 
@@ -87,7 +98,8 @@ a.disabled {
 }
 
 .navbarMenu{
-    border: 3px solid gray;
+    border: 3px solid white;
+    background-color: rgba(	194, 202, 215, 100%);
     width: fit-content;
     border-radius: 10px;
     margin: 1em 1em 1em 1em;
@@ -96,8 +108,8 @@ a.disabled {
 
 }
 
-.menuItem:hover .menuItem:active{
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+.menuItem:hover {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
 }
 
 
@@ -118,17 +130,52 @@ a.disabled {
     margin-right: 15px;
 }
 
+.border_color_logo {
+    stroke: white;
+    border-color: white;
+}
+
+.nav-link.active {
+    color: rgb(92, 108, 140);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.nav-link:hover {
+    color: rgb(36, 59, 107);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.nav-link {
+    color: 	rgb(36, 59, 107);
+}
+
+.custom_color {
+    background-color: rgba(	194, 202, 215, 100%) !important;
+    color: rgb(36, 59, 107) !important;
+    font-weight: bold;
+}
+
+.accordion-button.custom_color.collapsed {
+    background-color: white !important;
+    color: black !important;
+    font-weight:  normal;
+}
+
 .about__container__grid {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 1em;
+    row-gap: 0.1em;
 
 }
 
 .about__knx {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 1em;
+    row-gap: 0.1em;
     align-content: center;
     align-items: center;
 }
