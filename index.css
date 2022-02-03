@@ -125,8 +125,8 @@ a.disabled {
 }
 
 h4 {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     text-align: center;
     color: 	rgb(36, 59, 107);
 }
@@ -275,13 +275,19 @@ h4 {
 }
 
 .tab-pane {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+    padding-right: 1em;
+    padding-left: 1em;
 }
 
+@media (max-width: 350px){
+    .tab-pane {
+        padding-right: 0.1em;
+        padding-left: 0.1em;
+    }
+}
+
+
 .ul__center {
-    margin: 0 auto;
-    align-self: center;
-    width: min-content;
+    margin-left: 5em;
     alignment: center;
 }
