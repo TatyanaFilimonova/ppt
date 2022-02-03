@@ -1,9 +1,27 @@
 @import "/forms.css";
 
+
 .container__color {
     background-color: rgba(	194, 202, 215, 100%);
+    width: 100%;
 
 
+}
+
+.container__main {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.fixed {
+    position: fixed;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 1030;
 }
 
 .white {
@@ -13,6 +31,7 @@
 }
 
 .height_100 {
+    margin-top: 50px;
     height: max(100vh, 100%);
 }
 
@@ -64,12 +83,16 @@ a.disabled {
 }
 
 .navbar__flex {
+    width: 100%;
+    z-index: 2000;
     margin: 0 auto;
-    background-color: rgb(	136, 148, 172);
+    background-color: rgba(	194, 202, 215, 100%);
     display: flex;
     flex-direction: row;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-    border-radius: 0px 0px 5px 5px;
+}
+
+.fixed-top {
+    width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -78,6 +101,8 @@ a.disabled {
         margin-left: 1em;
         box-shadow: white;
     }
+
+
 }
 
 
@@ -96,6 +121,14 @@ a.disabled {
         display: none;
     }
 
+
+}
+
+h4 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    color: 	rgb(36, 59, 107);
 }
 
 .navbarMenu{
@@ -106,11 +139,12 @@ a.disabled {
     margin: 1em 1em 1em 1em;
     justify-self: end;
     padding: 1em;
+    z-index: 1;
 
 }
 
 .menuItem:hover {
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+    text-shadow: 1px 1px 3px white;
 }
 
 
@@ -136,15 +170,21 @@ a.disabled {
     border-color: white;
 }
 
+.footer_icon {
+    border-color: white;
+}
+
+
 .nav-link.active {
     color: rgb(92, 108, 140);
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-    border-top: 2px solid white;
+    border-left: 2px solid white !important;
+    border-right: 2px solid white !important;
+    border-top: 2px solid white !important;
 }
 
 .nav-link:hover {
     color: rgb(36, 59, 107);
+
     border-left: 2px solid white;
     border-right: 2px solid white;
     border-top: 2px solid white;
@@ -187,6 +227,7 @@ a.disabled {
 }
 
 .about__knx {
+    padding: 0.5em;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 0.1em;
@@ -213,4 +254,34 @@ a.disabled {
     .about__knx {
         font-size: 14px;
     }
+}
+
+.accordion-button:focus {
+    border: 0px !important;
+}
+
+.navbar-toggler {
+    border-color: #5C6C8CFF !important;
+    background-color: #5C6C8CFF !important;
+}
+
+.navbar-toggler:focus {
+    color: white !important;
+}
+
+.accordion-button:focus {
+    border-color: #C2CAD7FF !important;
+    box-shadow: 0 0 0 0.1rem #C2CAD7FF !important;
+}
+
+.tab-pane {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
+
+.ul__center {
+    margin: 0 auto;
+    align-self: center;
+    width: min-content;
+    alignment: center;
 }
