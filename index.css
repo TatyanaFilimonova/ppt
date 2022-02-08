@@ -278,6 +278,10 @@ input:focus {
     .about__knx {
         font-size: 14px;
     }
+    .container__main {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
 }
 
 .accordion-button:focus {
@@ -303,7 +307,7 @@ input:focus {
     padding-left: 1em;
 }
 
-@media (max-width: 350px){
+@media (max-width: 400px){
     .tab-pane {
         padding-right: 0.1em;
         padding-left: 0.1em;
