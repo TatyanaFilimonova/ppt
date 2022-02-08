@@ -8,7 +8,7 @@
 .form__group{
     margin-bottom: 0.5em;
     display: grid;
-    grid-template-columns: 3em 1fr;
+    grid-template-columns: 3.5em 1fr;
     row-gap: 1em;
     column-gap: 0.5em;
     padding: 0em;
@@ -126,7 +126,7 @@ input[type=checkbox]:before {
     content: "X";
     text-align: center;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 16px;
     color: rgb(36, 59, 107) !important;
     display: block;
     align-content: center;
