@@ -142,15 +142,16 @@ h4 {
     z-index: 1;
 
 }
-.w-100 {
-    align-self: center;
-    justify-self: center;
-    margin: 0 auto;
-    width: 70% !important;
-    height: 70% !important;
-}
+
 
 @media (min-width: 600px) {
+    .w-100 {
+        align-self: center;
+        justify-self: center;
+        margin: 0 auto;
+        width: 70% !important;
+        height: 70% !important;
+    }
 }
 
 
