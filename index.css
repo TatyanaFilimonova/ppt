@@ -315,6 +315,10 @@ input:focus {
     }
 }
 
+.modal_image {
+    width: 100%;
+    height: 100%;
+}
 
 .ul__center {
     margin-left: 5em;
