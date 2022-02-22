@@ -6,6 +6,16 @@ const disclaimer = "<p>"+
     "<ul><li>Клавишные выключатели</li><li>Терморегуляторы</li><li>Многопостовые рамки к электрофурнитуре</li><li>Диммеры</li>"+
     "<li>Пульты управления</li><li>Фрагментированную в управлении автоматику</li></ul>";
 
+function checkBoxChange(checkBoxId, divID) {
+    if (document.getElementById(checkBoxId).checked) {
+        document.getElementById(divID).hidden = false;
+    }
+    else {
+        document.getElementById(divID).hidden = true;
+    }
+}
+
+
 function parseData(formData, formItemName){
     let data = formData.get(formItemName);
     if (data !== null) {
@@ -37,113 +47,64 @@ function validFormData(form, formData) {
     return true;
 }
 
-function clickCalculateButton(formPrefix) {
+function writeCostConclusion(dataAPI) {
 
-    const form = document.forms[formPrefix+'Form'];
-    const formData = new FormData(form);
-    if (!validFormData(form, formData)) {
-        window.alert("Ошибка при вводе данных. Внесите корректную информацию в поля, выделенные красным");
-        return 1;
-    }
-
-    const floorNumber = parseData(formData, formPrefix+'FloorNumber');
-    const square = parseData(formData, formPrefix+'Square');
-    const ceilHeight = parseData(formData, formPrefix+'CeilHeight');
-    const bathroomNumber = parseData(formData, formPrefix+'BathroomNumber');
-    const roomNumber = parseData(formData, formPrefix+'RoomNumber');
-    const spacesNumber = parseData(formData, formPrefix+'SpacesNumber');
-    const groundSquare = parseData(formData, formPrefix+'GroundSquare');
-    const parking = getCheckBoxData(formData, formPrefix+'Parking');
-
-    const taskListProject = getCheckBoxData(formData, formPrefix+'TaskListProject');
-    const taskListWiring = getCheckBoxData(formData, formPrefix+'TaskListWiring');
-    const taskListInstall = getCheckBoxData(formData, formPrefix+'TaskListInstall');
-    const taskListService = getCheckBoxData(formData, formPrefix+'TaskListService');
-
-    const compIndoorLight = getCheckBoxData(formData, formPrefix+'ComponentsIndoorLight');
-    const compOutdoorLight = getCheckBoxData(formData, formPrefix+'ComponentsOutdoorLight');
-    const compGates = getCheckBoxData(formData, formPrefix+'ComponentsGates');
-    const compClimat = getCheckBoxData(formData, formPrefix+'ComponentsClimat');
-    const compVentilation = getCheckBoxData(formData, formPrefix+'ComponentVentilation');
-    const compCurtains = getCheckBoxData(formData, formPrefix+'ComponentsCurtains');
-    const compPipes = getCheckBoxData(formData, formPrefix+'ComponentsPipes');
-    const compIPtelecom = getCheckBoxData(formData, formPrefix+'ComponentsIPtelecom');
-    const compIrrigation = getCheckBoxData(formData, formPrefix+'ComponentsIrrigation');
-    const compMultimedia = getCheckBoxData(formData, formPrefix+'ComponentsMultimedia');
-    const compVideo = getCheckBoxData(formData, formPrefix+'ComponentsVideo');
-    const compGuard = getCheckBoxData(formData, formPrefix+'ComponentsGuard');
-    const compResource = getCheckBoxData(formData, formPrefix+'ComponentsGuard');
-
-    const  componentSet =  {
-        leaksSensor: {quantity: bathroomNumber+2, priceMin: 10, priceMax: 15, demand: compPipes, installCost: 5},
-        switchPanel: {quantity: bathroomNumber+roomNumber*2+parking+spacesNumber, priceMin: 150, priceMax: 300, demand: compIndoorLight, installCost: 10},
-        dimmer:      {quantity: Math.ceil(roomNumber/2), priceMin: 290, priceMax: 500, demand: compIndoorLight, installCost: 5},
-        lightActuator: {quantity: Math.ceil((bathroomNumber*2+roomNumber*2+spacesNumber+parking+Math.ceil(groundSquare/200))/6), priceMin: 200, priceMax:300, demand: compIndoorLight, installCost: 5 },
-        socketActuator: {quantity: Math.ceil((bathroomNumber*2+roomNumber*3+spacesNumber+parking*2+Math.ceil(groundSquare/200))/6), priceMin: 200, priceMax: 300, demand: compIndoorLight, installCost: 5},
-        heatFloorActuator:   {quantity: Math.ceil((bathroomNumber+2)/4), priceMin: 150, priceMax: 250, demand: compClimat, installCost: 5},
-        airSensor:   {quantity: (roomNumber+bathroomNumber+1), priceMin: 150, priceMax: 200, demand: compClimat, installCost: 5},
-        climaBridge:   {quantity: (roomNumber+1), priceMin: 300, priceMax: 1000, demand: compClimat, installCost: 10},
-        servoDrive:  {quantity: bathroomNumber+Math.ceil(groundSquare/200)*compIrrigation, priceMin: 50, priceMax: 150, demand: compPipes, installCost: 10},
-        gateControl: {quantity: parking+3, priceMin: 100, priceMax: 200, demand: compGates, installCost: 15},
-        mainControl: {quantity: 1, priceMin: 500, priceMax: 1000, demand: 0, installCost: 100},
-        irrigator:   {quantity: Math.ceil((groundSquare-square)/200), priceMin: 100, priceMax: 300, demand: compIrrigation, installCost: 15},
-        ipPanel:     {quantity: parking+1+floorNumber-1, priceMin: 150, priceMax: 300, demand: compIPtelecom, installCost: 15},
-        ipCam:       {quantity: parking+6, priceMin: 100, priceMax: 300, demand: compVideo, installCost: 15},
-        heatControl: {quantity: Math.ceil((bathroomNumber+roomNumber+1+spacesNumber+parking)/6), priceMin: 400, priceMax: 600, demand: compClimat, installCost: 20},
-        ipStorage:   {quantity: 1, priceMin: 150, priceMax: 500, demand: compVideo, installCost: 15},
-        curtain:     {quantity: Math.ceil((roomNumber+1)*2/6), priceMin: 150, priceMax: 50, demand: compCurtains, installCost: 10},
-        resourceCounter: {quantity: 1, priceMin: 330, priceMax: 500, demand: compResource, installCost: 20},
-        wires:       {quantity: Math.ceil(square*12*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.8, priceMax: 1.2, demand: taskListWiring, installCost: 0},
-        twistedPair: {quantity: Math.ceil(square*5*(1+(2.7+ceilHeight-3)/2.7*0.4)), priceMin: 0.6, priceMax: 1, demand: taskListWiring, installCost: 0}
-    }
-
-    const costs = getMaterialCost(componentSet);
-    const wires_cost  = Math.ceil(componentSet.wires.quantity*componentSet.wires.priceMin*componentSet.wires.demand +
-        componentSet.twistedPair.quantity*componentSet.twistedPair.priceMin*componentSet.twistedPair.demand);
-
-    const projectCost = {
-        materialCost: Math.ceil(costs[0] - wires_cost),
-        wires_cost: wires_cost,
-        projectDevCost: 400*taskListProject,
-        electricDevCost: Math.ceil((componentSet.wires.quantity+componentSet.twistedPair.quantity)*1*taskListWiring),
-        installCost: costs[1],
-        serviceCost: (costs[0]!==0)? 15 : 0,
-    }
-
-    const wireString = (taskListWiring!==0)? "Кабельная продукция: <div><strong>" + wires_cost + "</strong></div>" : "";
-    const projectString = (taskListProject!==0)? "Разработка проекта: <div><strong>" + projectCost.projectDevCost +  "</strong></div>" : "";
-    const electricDevString = (taskListWiring!==0)? "Электромонтажные работы: <div><strong>" + projectCost.electricDevCost + "</strong></div>" : "";
-    const totalElectro = (taskListWiring!==0)? "<strong>Итого электромонтаж:</strong> <div><strong>" + (projectCost.wires_cost + projectCost.electricDevCost)  + "</strong></div>" : "";
-    const installString = (taskListInstall!==0)? "Установка и настройка системы: <div><strong>" + projectCost.installCost + "</strong></div>" : "";
-    const serviceString = (taskListService!==0)? "Абонентское обслуживание, за месяц:  <div><strong>" + projectCost.serviceCost + "</strong></div>" : "";
+    const projectString = (dataAPI['Project_cost']!==0)? "Разработка проекта: <div>" + Math.ceil(parseFloat(dataAPI['Project_cost'])) +  "</div>" : "";
+    const equipmentKnxString = (dataAPI['Equipment_cost_knx']!==0)? "Стоимость оборудования в стандарте KNX: <div>" + Math.ceil(parseFloat(dataAPI['Equipment_cost_knx'])) + "</div>" : "";
+    const equipmentLarnitechString = (dataAPI['Equipment_cost_larnitech']!==0)? "Стоимость оборудования в стандарте Larnitech: <div>" + Math.ceil(parseFloat(dataAPI['Equipment_cost_larnitech'])) + "</div>" : "";
+    const installKnxString = (dataAPI['Install_cost_knx'])? "Установка и настройка системы KNX: <div>" + Math.ceil(parseFloat(dataAPI['Install_cost_knx'])) + "</div>" : "";
+    const installLarnitechString = (dataAPI['Install_cost_larnitech'])? "Установка и настройка системы Larnitech: <div>" + Math.ceil(parseFloat(dataAPI['Install_cost_larnitech'])) + "</div>" : "";
+    const totalLarnitechString = (dataAPI['Install_cost_larnitech'])? "<strong>Итого автоматизация в стандарте Larnitech:</strong> <div><strong>"
+        + Math.ceil(parseFloat(dataAPI['Install_cost_larnitech']) +parseFloat(dataAPI['Equipment_cost_larnitech'])+
+        parseFloat(dataAPI['Project_cost']))+"</strong></div>" : "";
+    const totalKnxString = (dataAPI['Install_cost_knx'])? "<strong>Итого автоматизация в стандарте KNX:</strong> <div><strong>"
+        + Math.ceil(parseFloat(dataAPI['Install_cost_knx']) +parseFloat(dataAPI['Equipment_cost_knx'])+parseFloat(dataAPI['Project_cost']))+"</strong></div>" : "";
     let elementToWrite = document.getElementById('HouseAmount');
     elementToWrite.innerHTML = ""+
         projectString +
-        "Стоимость компонентов: <div><strong>"+ projectCost.materialCost + "</strong></div>" +
-        installString +
-        serviceString +
-        "<strong>Итого проект автоматизации :</strong><div><strong>"+ (projectCost.materialCost + projectCost.projectDevCost+projectCost.installCost ) + "</strong></div>"+
-        "<div>&nbsp; </div>"+ "<div>&nbsp;</div>"+
-        wireString+
-        electricDevString+
-        totalElectro;
+        equipmentKnxString +
+        installKnxString +
+        totalKnxString+
+        "<div></div><div></div>"+
+        equipmentLarnitechString+
+        installLarnitechString+
+        totalLarnitechString;
+    elementToWrite.style.display='grid';
     elementToWrite = document.getElementById(formPrefix+'Disclaimer');
     elementToWrite.innerHTML = disclaimer;
-    document.getElementById(formPrefix+'Amount').style.display='grid';
-    document.getElementById(formPrefix+'Disclaimer').style.display='grid';
+    elementToWrite.style.display='grid';
+
 }
 
-function getMaterialCost(componentSet){
-    let materialCost = 0;
-    let installCost = 0;
-    const keys = Object.keys(componentSet);
-    keys.map((key) => {
-        materialCost+= componentSet[key].priceMin*componentSet[key].quantity*componentSet[key].demand;
-        installCost+= componentSet[key].installCost*componentSet[key].quantity*componentSet[key].demand;
-    })
-    if (materialCost !==0) {
-        materialCost+=componentSet.mainControl.priceMin
+
+
+async function  SendData(FormName) {
+    const form = document.forms[FormName];
+    const formData = new FormData(form);
+    let object = {};
+    formData.forEach(function(value, key){
+        object[key] = value;
+    });
+    const request_params = {
+        method: "POST",
+        cache: 'no-cache',
+        mode: 'cors',
+        headers: {
+            'Content-Type': "application/json",
+            // 'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(object)
+    };
+    try {
+        const response = await fetch("https://pptapi.herokuapp.com/calc_api/CalculateBudget/", request_params);
+        const result = await response.json();
+        const resp_status = response.status
+        console.log(result)
+        console.log(result['Project_cost'])
+        writeCostConclusion(result)
+        return [resp_status];
+    } catch (e) {
+        return [400, ""]
     }
-    return [materialCost, installCost];
 }
 

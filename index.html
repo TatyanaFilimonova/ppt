@@ -751,9 +751,6 @@
                     </p>
                     <ul>
                             <li>
-                                выберите раздел, соответствующий вашему объекту
-                            </li>
-                            <li>
                                 внесите в форму параметры вашего объекта
                             </li>
                             <li>
@@ -777,7 +774,7 @@
                                         data-bs-target="#collapseBudgetOne"
                                         aria-expanded="false"
                                         aria-controls="collapseBudgetOne">
-                                    Расчет стоимости системы "умный дом"
+                                    Расчет стоимости автоматизации
                                 </button>
                             </h2>
                             <div id="collapseBudgetOne"
@@ -790,92 +787,253 @@
                                              aria-labelledby="headingFormHouse"
                                              class="form__container"
                                         >
-                                            <p class = "form__group_name">Расскажите о своем доме:</p>
-                                            <div id ="houseAbout" class="form__group noscroll">
-                                                <input type = "number"
-                                                       name = "HouseFloorNumber"
-                                                       class = "form__input"
-                                                       min = "1"
-                                                       max= "4"
-                                                       value="1">
-                                                Количество этажей
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseSquare"
-                                                       class = "form__input"
-                                                       min = "50"
-                                                       max = "500"
-                                                       value="120">
-                                                Общая площадь дома, м2
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseCeilHeight"
-                                                       class = "form__input"
-                                                       min = "2"
-                                                       max = "5"
-                                                       value="3">
-                                                Высота потолков
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseBathroomNumber"
-                                                       class = "form__input"
-                                                       min = "1"
-                                                       max = "10"
-                                                       value="2">
-                                                Количество санузлов
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseRoomNumber"
-                                                       class = "form__input"
-                                                       min = "1"
-                                                       max = "20"
-                                                       value="3">
-                                                Количество комнат
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseSpacesNumber"
-                                                       class = "form__input"
-                                                       min = "1"
-                                                       max = "10"
-                                                       value="2">
-                                                Количество бытовых помещений
-                                                </input>
-                                                <input type = "number"
-                                                       name = "HouseGroundSquare"
-                                                       class = "form__input"
-                                                       min = "150"
-                                                       max = "10000"
-                                                       value="600">
-                                                Площадь участка, m2
-                                                </input>
-                                                <input type="checkbox" name = "HouseParking"> Наличие гаража </input>
-                                            </div>
-                                            <p class = "form__group_name">Перечень работ, которые вы нам доверяете:</p>
+                                            <p class = "form__group_name">Перечень задач автоматизации:</p>
                                             <div id = "houseTaskList" class="form__group__checkboxes">
-                                                <input type="checkbox" name = "HouseTaskListProject" checked = "true"> Разработка проектной документации </input>
-                                                <input type="checkbox" name = "HouseTaskListWiring" checked = "true"> Монтажные работы по слаботочным и электросетям </input>
-                                                <input type="checkbox" name = "HouseTaskListInstall" checked = "true"> Установка и настройка компонентов системы </input>
-                                                <input type="checkbox" name = "HouseTaskListService" checked = "true"> Абонентское обслуживание системы </input>
+                                                <input type="checkbox" name = "Project" checked = "true"> Разработка проектной документации </input>
+                                                <input type="checkbox" name = "Install" checked = "true"> Установка и настройка компонентов системы </input>
                                             </div>
                                             <p class = "form__group_name">Направления автоматизации:</p>
-                                            <div id = "houseComponents" class="form__group__checkboxes">
-                                                <input type="checkbox" name = "HouseComponentsIndoorLight" checked = "true"> Управление внутренним освещением и электроприборами </input>
-                                                <input type="checkbox" name = "HouseComponentsOutdoorLight" checked = "true"> Управление внешним освещением </input>
-                                                <input type="checkbox" name = "HouseComponentsGates" checked = "true"> Управление электро-замками, откатными и подъемными воротами </input>
-                                                <input type="checkbox" name = "HouseComponentsClimat" checked = "true"> Управление климатом </input>
-                                                <input type="checkbox" name = "HouseComponentVentilation" checked = "true"> Управление вентиляцией </input>
-                                                <input type="checkbox" name = "HouseComponentsCurtains" checked = "true"> Управление шторами и жалюзи </input>
-                                                <input type="checkbox" name = "HouseComponentsPipes" checked = "true"> Управление водопотреблением и водоотводом </input>
-                                                <input type="checkbox" name = "HouseComponentsIPtelecom" checked = "true"> IP домофония </input>
-                                                <input type="checkbox" name = "HouseComponentsIrrigation" checked = "true"> Управление поливом </input>
-                                                <input type="checkbox" name = "HouseComponentsMultimedia" checked = "true"> Управление мультимедиа системой </input>
-                                                <input type="checkbox" name = "HouseComponentsVideo" checked = "true"> Видеонаблюдение </input>
-                                                <input type="checkbox" name = "HouseComponentsGuard" checked = "true"> Защита от проникновения, пожара, затопления </input>
-                                                <input type="checkbox" name = "HouseComponentsResource" checked = "true"> Учет ресурсов </input>
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Light"
+                                                       id = "Light"
+                                                       onchange = "checkBoxChange('Light', 'LightDetails')"
+                                                >
+                                                Управление освещением
+                                                </input>
                                             </div>
+                                            <div id = "LightDetails" class="form__group noscroll" hidden>
+                                                <input type = "number"
+                                                       name = "LightDimmer"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "50"
+                                                       value="0"
+                                                >
+                                                Групп освещения с диммером
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "LightRele"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "50"
+                                                       value="0">
+                                                Группы освещения без диммера
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "LightPanel"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "50"
+                                                       value="0">
+                                                Сенсорные панели-выключатели
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "LightButton"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "50"
+                                                       value="0">
+                                                Кнопочные включатели
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "LightSensor"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Датчики движения/присутствия
+                                                </input>
+
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Curtain"
+                                                       id = "Curtain"
+                                                       onchange="checkBoxChange('Curtain', 'curtainDetails')"
+                                                > Управление шторами и жалюзи </input>
+                                            </div>
+
+                                            <div id = "curtainDetails" class="form__group" hidden>
+                                                <input type = "number"
+                                                       name = "CurtainController"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "100"
+                                                       value="0">
+                                                Управляемые шторы/роллеты
+                                                </input>
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Clima"
+                                                       id = "Clima"
+                                                       onchange="checkBoxChange('Clima', 'climateDetails')"
+                                                >
+                                                Управление климатом </input>
+                                            </div>
+
+                                            <div id = "climateDetails" class="form__group" hidden>
+                                                <input type = "number"
+                                                       name = "ClimaHeater"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "50"
+                                                       value="0">
+                                                Радиаторы/конвекторы
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "ClimaWaterFloor"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                "Водяные" теплые полы
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "ClimaElectricFloor"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                "Электрические" теплые полы
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "ClimaACController"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "10"
+                                                       value="0">
+                                                Кондиционеры/фанкойлы
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "ClimaAirFlowController"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "5"
+                                                       value="0">
+                                                Приточно-вытяжные установки
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "ClimaSensor"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Датчики открытия окон/дверей
+                                                </input>
+
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Gates"
+                                                       id = "Gates"
+                                                       onchange="checkBoxChange('Gates', 'gateDetails')"
+                                                >
+                                                Управление электро-замками, откатными и подъемными воротами </input>
+                                            </div>
+                                            <div id = "gateDetails" class="form__group" hidden>
+                                                <input type = "number"
+                                                       name = "GatesController"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Моторизированные замки
+                                                </input>
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Water"
+                                                       id = "Water"
+                                                       onchange="checkBoxChange('Water', 'waterDetails')">
+                                                Управление водопотреблением и водоотводом </input>
+                                            </div>
+
+                                            <div class="form__group" hidden id="waterDetails">
+                                                <input type = "number"
+                                                       name = "WaterSensor"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Датчики протечки
+                                                </input>
+
+                                                <input type = "number"
+                                                       name = "WaterValve"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "10"
+                                                       value="0">
+                                                Клапан контроля водоснабжения
+                                                </input>
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Intercom"
+                                                       id = "Intercom"
+                                                       onchange="checkBoxChange('Intercom', 'ipTelecomDetail')"
+                                                > IP домофония </input>
+                                            </div>
+
+                                            <div class="form__group" id="ipTelecomDetail" hidden>
+                                                <input type = "number"
+                                                       name = "IntercomPanel"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Вызывная панель
+                                                </input>
+                                            </div>
+
+                                            <div class="form__group__checkboxes">
+                                                <input type="checkbox"
+                                                       name = "Resources"
+                                                       id = "Resources"
+                                                       onchange="checkBoxChange('Resources', 'resourcesDetail')"
+                                                > Учет ресурсов </input>
+                                            </div>
+
+                                            <div class="form__group" id="resourcesDetail" hidden>
+                                                <input type = "number"
+                                                       name = "ResourcesMeter"
+                                                       class = "form__input"
+                                                       min = "0"
+                                                       max= "20"
+                                                       value="0">
+                                                Датчик учета энергоресурсов
+                                                </input>
+                                            </div>
+
+                                            <div id ="houseAbout" class="form__group noscroll">
+
+
+
+
+
+
+
+                                            </div>
+
                                             <button type="button"
                                                     class="btn btn-primary form__button"
-                                                    onclick="clickCalculateButton('House')"
+                                                    onclick="SendData('HouseForm')"
                                             >
                                                 Рассчитать стоимость
                                             </button>
@@ -891,79 +1049,6 @@
                             </div>
                         </div>
 
-                        <!--Budget accordion item 2   Smart flat budget                                                               -->
-
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingBudgetTwo">
-                                <button class="accordion-button custom_color collapsed padding_small"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseBudgetTwo"
-                                        aria-expanded="false"
-                                        aria-controls="collapseBudgetTwo">
-                                    Расчет стоимости системы "умная квартира"
-                                </button>
-                            </h2>
-                            <div id="collapseBudgetTwo"
-                                 class="accordion-collapse padding_small collapse"
-                                 aria-labelledby="headingBudgetTwo"
-                                 data-bs-parent="#accordionBudget">
-                                <div class="accordion-body padding_small">
-                                    <strong>Оценка бюджета автоматизации квартиры:</strong>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Budget accordion item 3   OSBB budget                                                               -->
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingBudgetThree">
-                                <button class="accordion-button custom_color collapsed padding_small"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseBudgetThree"
-                                        aria-expanded="false"
-                                        aria-controls="collapseBudgetThree">
-                                    Расчет стоимости автоматизации подъезда или ОСББ
-                                </button>
-                            </h2>
-                            <div id="collapseBudgetThree"
-                                 class="accordion-collapse padding_small collapse"
-                                 aria-labelledby="headingBudgetThree"
-                                 data-bs-parent="#accordionBudget">
-                                <div class="accordion-body padding_small">
-                                    <strong>Оценка стоимости автоматизации подъезда/ОСББ:</strong>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Budget accordion item 4   Smart office budget                                                               -->
-
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingBudgetFour">
-                                <button class="accordion-button custom_color collapsed padding_small"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseBudgetFour"
-                                        aria-expanded="false"
-                                        aria-controls="collapseBudgetFour">
-                                    Расчет стоимости автоматизации коммерческой недвижимости
-                                </button>
-                            </h2>
-                            <div id="collapseBudgetFour"
-                                 class="accordion-collapse padding_small collapse"
-                                 aria-labelledby="headingBudgetFour"
-                                 data-bs-parent="#accordionBudget">
-                                <div class="accordion-body padding_small">
-                                    <strong>Оценка стоимости автоматизации офиса:</strong>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="spacer"></div>
                 </div>
