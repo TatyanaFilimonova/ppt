@@ -1,3 +1,7 @@
+const global_url = 'http://127.0.0.1:8000/'
+//let global_url = 'https://pptapi.herokuapp.com/'
+//let global_language = 'ru'
+
 const disclaimer = "<p>"+
     "<strong>Внимание</strong>: расчет носит иллюстративный характер, он опирается на <strong>базовый</strong> набор элементов. В "+
     "конкретном проекте набор формируется исходя из потребностей и бюджета.</p>"+
@@ -7,29 +11,9 @@ const disclaimer = "<p>"+
     "<li>Пульты управления</li><li>Фрагментированную в управлении автоматику</li></ul>";
 
 function checkBoxChange(checkBoxId, divID) {
-    if (document.getElementById(checkBoxId).checked) {
-        document.getElementById(divID).hidden = false;
-    }
-    else {
-        document.getElementById(divID).hidden = true;
-    }
+    document.getElementById(divID).hidden = !document.getElementById(checkBoxId).checked;
 }
 
-
-function parseData(formData, formItemName){
-    let data = formData.get(formItemName);
-    if (data !== null) {
-        return parseInt(data);
-    }
-    return 0;
-}
-
-function getCheckBoxData(formData, formItemName){
-    if (formData.has(formItemName)) {
-        return 1;
-    }
-    return 0;
-}
 
 function validFormData(form, formData) {
     const keys = formData.keys();
@@ -70,9 +54,42 @@ function writeCostConclusion(dataAPI) {
         installLarnitechString+
         totalLarnitechString;
     elementToWrite.style.display='grid';
-    elementToWrite = document.getElementById(formPrefix+'Disclaimer');
+    elementToWrite = document.getElementById('HouseDisclaimer');
     elementToWrite.innerHTML = disclaimer;
     elementToWrite.style.display='grid';
+
+}
+
+
+function writeFormBody(apiData){
+    const elementToWrite = document.getElementById('generateFormBody');
+    let innerHTML = ''
+    apiData.map((direction) => {
+        innerHTML += ""+
+        "<div class='form__group__checkboxes'>"+"\n"+
+            "<input type='checkbox'"+
+                   "name = '"+ Object.keys(direction)[0]+"' \n"+
+                   " id= '"+ Object.keys(direction)[0]+"' \n"+
+                   " onChange = checkBoxChange('"+ Object.keys(direction)[0]+"','"+Object.keys(direction)[0]+"Details')"+"\n"+
+            ">"+
+                direction[Object.keys(direction)[0]]['name_ru']+"\n"+" </input> </div>"+
+            "<div id='"+Object.keys(direction)[0]+"Details' class='form__group noscroll' hidden>"+"\n"
+        direction[Object.keys(direction)[0]]['equipment'].map((element) =>{
+            console.log(element);
+            innerHTML += ""+
+            "<input type='number'"+
+                   " name= "+ element['jsname']+"\n"+
+                   " class =' form__input' "+"\n"+
+                   " min = '0'"+"\n"+
+                   " max = '50'"+"\n"+
+                   " value= '0'"+"\n"+
+            ">"+"\n"+
+                element['equipment_name_ru']+" </input>"+"\n"
+        })
+        innerHTML+=" </div>"
+    })
+    console.log(innerHTML);
+    elementToWrite.innerHTML = innerHTML;
 
 }
 
@@ -96,14 +113,40 @@ async function  SendData(FormName) {
         body: JSON.stringify(object)
     };
     try {
-        const response = await fetch("https://pptapi.herokuapp.com/calc_api/CalculateBudget/", request_params);
+        const response = await fetch(global_url+"calc_api/CalculateBudget/", request_params);
         const result = await response.json();
         const resp_status = response.status
-        console.log(result)
-        console.log(result['Project_cost'])
         writeCostConclusion(result)
         return [resp_status];
     } catch (e) {
+        window.alert(e);
+        return [400, ""]
+    }
+}
+
+
+
+
+async function  LoadForm() {
+        const request_params = {
+        method: "GET",
+        cache: 'no-cache',
+        mode: 'cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+
+    };
+    try {
+        const response = await fetch(global_url+"calc_api/getformbody/", request_params);
+        const result = await response.json();
+        const resp_status = response.status;
+        console.log(result);
+        writeFormBody(result);
+        return [resp_status];
+    } catch (e) {
+        window.alert(e);
         return [400, ""]
     }
 }
