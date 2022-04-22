@@ -745,19 +745,19 @@
 
             </div>
                 <div class="tab-pane fade " id="budget" role="tabpanel" aria-labelledby="budget-tab">
-                    <h4>Хотите оценить бюджет автоматизации недвижимости?</h4>
+                    <h4>Хотите оценить бюджет автоматизации вашей недвижимости?</h4>
                     <p>
-                    Воспользуйтесь калькулятором:
+                    Воспользуйтесь нашим калькулятором:
                     </p>
                     <ul>
                             <li>
-                                определите набор задач
+                                выберите раздел, соответствующий вашему объекту
+                            </li>
+                            <li>
+                                внесите в форму параметры вашего объекта
                             </li>
                             <li>
                                 поставьте отметки напротив функций, которые хотите автоматизировать
-                            </li>
-                            <li>
-                               укажите количество устройств (линий света, радиаторов и т.д.)
                             </li>
                             <li>
                                 нажмите "Рассчитать"
@@ -776,10 +776,8 @@
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseBudgetOne"
                                         aria-expanded="false"
-                                        aria-controls="collapseBudgetOne"
-                                        onclick="LoadForm()"
-                                >
-                                    Расчет стоимости автоматизации
+                                        aria-controls="collapseBudgetOne">
+                                    Расчет стоимости системы "умный дом"
                                 </button>
                             </h2>
                             <div id="collapseBudgetOne"
@@ -792,19 +790,92 @@
                                              aria-labelledby="headingFormHouse"
                                              class="form__container"
                                         >
-                                            <p class = "form__group_name">Перечень задач автоматизации:</p>
+                                            <p class = "form__group_name">Расскажите о своем доме:</p>
+                                            <div id ="houseAbout" class="form__group noscroll">
+                                                <input type = "number"
+                                                       name = "HouseFloorNumber"
+                                                       class = "form__input"
+                                                       min = "1"
+                                                       max= "4"
+                                                       value="1">
+                                                Количество этажей
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseSquare"
+                                                       class = "form__input"
+                                                       min = "50"
+                                                       max = "500"
+                                                       value="120">
+                                                Общая площадь дома, м2
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseCeilHeight"
+                                                       class = "form__input"
+                                                       min = "2"
+                                                       max = "5"
+                                                       value="3">
+                                                Высота потолков
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseBathroomNumber"
+                                                       class = "form__input"
+                                                       min = "1"
+                                                       max = "10"
+                                                       value="2">
+                                                Количество санузлов
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseRoomNumber"
+                                                       class = "form__input"
+                                                       min = "1"
+                                                       max = "20"
+                                                       value="3">
+                                                Количество комнат
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseSpacesNumber"
+                                                       class = "form__input"
+                                                       min = "1"
+                                                       max = "10"
+                                                       value="2">
+                                                Количество бытовых помещений
+                                                </input>
+                                                <input type = "number"
+                                                       name = "HouseGroundSquare"
+                                                       class = "form__input"
+                                                       min = "150"
+                                                       max = "10000"
+                                                       value="600">
+                                                Площадь участка, m2
+                                                </input>
+                                                <input type="checkbox" name = "HouseParking"> Наличие гаража </input>
+                                            </div>
+                                            <p class = "form__group_name">Перечень работ, которые вы нам доверяете:</p>
                                             <div id = "houseTaskList" class="form__group__checkboxes">
-                                                <input type="checkbox" name = "Project" checked = "true"> Разработка проектной документации </input>
-                                                <input type="checkbox" name = "Install" checked = "true"> Установка и настройка компонентов системы </input>
+                                                <input type="checkbox" name = "HouseTaskListProject" checked = "true"> Разработка проектной документации </input>
+                                                <input type="checkbox" name = "HouseTaskListWiring" checked = "true"> Монтажные работы по слаботочным и электросетям </input>
+                                                <input type="checkbox" name = "HouseTaskListInstall" checked = "true"> Установка и настройка компонентов системы </input>
+                                                <input type="checkbox" name = "HouseTaskListService" checked = "true"> Абонентское обслуживание системы </input>
                                             </div>
                                             <p class = "form__group_name">Направления автоматизации:</p>
-                                            <div id="generateFormBody" ></div>
-                                           <div id ="houseAbout" class="form__group noscroll">
-                                        </div>
-
+                                            <div id = "houseComponents" class="form__group__checkboxes">
+                                                <input type="checkbox" name = "HouseComponentsIndoorLight" checked = "true"> Управление внутренним освещением и электроприборами </input>
+                                                <input type="checkbox" name = "HouseComponentsOutdoorLight" checked = "true"> Управление внешним освещением </input>
+                                                <input type="checkbox" name = "HouseComponentsGates" checked = "true"> Управление электро-замками, откатными и подъемными воротами </input>
+                                                <input type="checkbox" name = "HouseComponentsClimat" checked = "true"> Управление климатом </input>
+                                                <input type="checkbox" name = "HouseComponentVentilation" checked = "true"> Управление вентиляцией </input>
+                                                <input type="checkbox" name = "HouseComponentsCurtains" checked = "true"> Управление шторами и жалюзи </input>
+                                                <input type="checkbox" name = "HouseComponentsPipes" checked = "true"> Управление водопотреблением и водоотводом </input>
+                                                <input type="checkbox" name = "HouseComponentsIPtelecom" checked = "true"> IP домофония </input>
+                                                <input type="checkbox" name = "HouseComponentsIrrigation" checked = "true"> Управление поливом </input>
+                                                <input type="checkbox" name = "HouseComponentsMultimedia" checked = "true"> Управление мультимедиа системой </input>
+                                                <input type="checkbox" name = "HouseComponentsVideo" checked = "true"> Видеонаблюдение </input>
+                                                <input type="checkbox" name = "HouseComponentsGuard" checked = "true"> Защита от проникновения, пожара, затопления </input>
+                                                <input type="checkbox" name = "HouseComponentsResource" checked = "true"> Учет ресурсов </input>
+                                            </div>
                                             <button type="button"
                                                     class="btn btn-primary form__button"
-                                                    onclick="SendData('HouseForm')"
+                                                    onclick="clickCalculateButton('House')"
                                             >
                                                 Рассчитать стоимость
                                             </button>
@@ -820,6 +891,79 @@
                             </div>
                         </div>
 
+                        <!--Budget accordion item 2   Smart flat budget                                                               -->
+
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingBudgetTwo">
+                                <button class="accordion-button custom_color collapsed padding_small"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseBudgetTwo"
+                                        aria-expanded="false"
+                                        aria-controls="collapseBudgetTwo">
+                                    Расчет стоимости системы "умная квартира"
+                                </button>
+                            </h2>
+                            <div id="collapseBudgetTwo"
+                                 class="accordion-collapse padding_small collapse"
+                                 aria-labelledby="headingBudgetTwo"
+                                 data-bs-parent="#accordionBudget">
+                                <div class="accordion-body padding_small">
+                                    <strong>Оценка бюджета автоматизации квартиры:</strong>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Budget accordion item 3   OSBB budget                                                               -->
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingBudgetThree">
+                                <button class="accordion-button custom_color collapsed padding_small"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseBudgetThree"
+                                        aria-expanded="false"
+                                        aria-controls="collapseBudgetThree">
+                                    Расчет стоимости автоматизации подъезда или ОСББ
+                                </button>
+                            </h2>
+                            <div id="collapseBudgetThree"
+                                 class="accordion-collapse padding_small collapse"
+                                 aria-labelledby="headingBudgetThree"
+                                 data-bs-parent="#accordionBudget">
+                                <div class="accordion-body padding_small">
+                                    <strong>Оценка стоимости автоматизации подъезда/ОСББ:</strong>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Budget accordion item 4   Smart office budget                                                               -->
+
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingBudgetFour">
+                                <button class="accordion-button custom_color collapsed padding_small"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseBudgetFour"
+                                        aria-expanded="false"
+                                        aria-controls="collapseBudgetFour">
+                                    Расчет стоимости автоматизации коммерческой недвижимости
+                                </button>
+                            </h2>
+                            <div id="collapseBudgetFour"
+                                 class="accordion-collapse padding_small collapse"
+                                 aria-labelledby="headingBudgetFour"
+                                 data-bs-parent="#accordionBudget">
+                                <div class="accordion-body padding_small">
+                                    <strong>Оценка стоимости автоматизации офиса:</strong>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="spacer"></div>
                 </div>

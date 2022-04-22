@@ -7,12 +7,11 @@
 
 .form__group{
     margin-bottom: 0.5em;
-
     display: grid;
     grid-template-columns: 3.5em 1fr;
-    row-gap: 0.5em;
+    row-gap: 1em;
     column-gap: 0.5em;
-    padding-left: 1em;
+    padding: 0em;
 }
 
 .form__group__checkboxes{
