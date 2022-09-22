@@ -9,9 +9,25 @@
     margin-bottom: 0.5em;
     display: grid;
     grid-template-columns: 3.5em 1fr;
-    row-gap: 1em;
+    row-gap: 0.5em;
     column-gap: 0.5em;
-    padding: 0em;
+    padding-left: 1em;
+
+}
+
+
+.form__group__project{
+    margin-bottom: 0.5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+    padding-left: 1em;
+
+}
+
+.file {
+    grid-template-columns: 1fr;
 }
 
 .form__group__checkboxes{

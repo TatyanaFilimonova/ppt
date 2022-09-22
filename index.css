@@ -91,6 +91,10 @@ a.disabled {
     flex-direction: row;
 }
 
+.invisible {
+    display: none;
+}
+
 .fixed-top {
     width: 100%;
 }
