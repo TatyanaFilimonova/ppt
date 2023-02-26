@@ -163,9 +163,8 @@ async function  LoadForm() {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
-
     };
-    };
+    
     try {
         const response = await fetch(global_url+"calc_api/getformbody/", request_params);
         const result = await response.json();
