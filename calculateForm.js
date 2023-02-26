@@ -158,9 +158,9 @@ async function  LoadForm() {
         const request_params = {
         method: "GET",
         cache: 'no-cache',
-        mode: 'cors',
+        //mode: 'cors',
         headers: {
-            'Accept': 'application/json',
+        //    'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
 
