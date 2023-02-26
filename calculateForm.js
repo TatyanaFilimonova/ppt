@@ -136,9 +136,7 @@ async function makePostRequest(FormName, url) {
         method: "POST",
         cache: 'no-cache',
         mode: 'cors',
-        headers: new Headers ({
-            'Access-Control-Allow-Headers': 'access-control-allow-header',
-        }),
+        
         body: formData
     };
     try {
