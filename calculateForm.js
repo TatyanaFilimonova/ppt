@@ -1,6 +1,6 @@
 //const global_url = 'http://127.0.0.1:8000/'
 let phoneNumCounter = 1;
-let global_url = 'https://pptapi.herokuapp.com/'
+const global_url = 'https://pptapi.herokuapp.com/'
 //let global_language = 'ru'
 
 const disclaimer = "<p>"+
@@ -155,15 +155,16 @@ async function makePostRequest(FormName, url) {
 
 
 async function  LoadForm() {
-        const request_params = {
+    const request_params = {
         method: "GET",
         cache: 'no-cache',
-        //mode: 'cors',
+        mode: 'cors',
         headers: {
-        //    'Accept': 'application/json',
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
 
+    };
     };
     try {
         const response = await fetch(global_url+"calc_api/getformbody/", request_params);
