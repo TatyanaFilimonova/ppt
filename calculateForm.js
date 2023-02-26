@@ -1,6 +1,6 @@
-const global_url = 'http://127.0.0.1:8000/'
+//const global_url = 'http://127.0.0.1:8000/'
 let phoneNumCounter = 1;
-//let global_url = 'https://pptapi.herokuapp.com/'
+let global_url = 'https://pptapi.herokuapp.com/'
 //let global_language = 'ru'
 
 const disclaimer = "<p>"+
